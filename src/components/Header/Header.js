@@ -37,7 +37,7 @@ const Header = () => {
         </form>
       </div>
       <div className="user-image">
-        <img src={user} alt="user" />
+        <i class="fa-solid fa-circle-user" style={{color:"white",fontSize:"40px"}}></i>
       </div>
     </div>
   );

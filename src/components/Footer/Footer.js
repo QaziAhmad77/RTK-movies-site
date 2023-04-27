@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div>Movie App</div>
-      <div>02021, Movie, Inc. or its affilites</div>
+      <div>Copyright © 2023, Qazi Ahmad. All rights reserved.</div>
     </div>
   );
 };
