@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const movieText = "Harry";
+  const movieText = "sports";
   const showText = "fighting"
   useEffect(() => {
     // const movieText = 'Harry';
