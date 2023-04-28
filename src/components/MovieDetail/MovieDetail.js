@@ -5,7 +5,6 @@ import './MovieDetail.scss';
 import {
   fetchAsyncMovieOrShowDetail,
   getSelctedMovieOrShow,
-  removeSelectedMovieOrShow,
 } from '../../features/movies/movieSlice';
 
 const MovieDetail = () => {
@@ -15,9 +14,6 @@ const MovieDetail = () => {
   console.log(data);
   useEffect(() => {
     dispatch(fetchAsyncMovieOrShowDetail(imdbID));
-    return () => {
-      dispatch(removeSelectedMovieOrShow());
-    };
   }, [dispatch, imdbID]);
   return (
     <div className="movie-section">
