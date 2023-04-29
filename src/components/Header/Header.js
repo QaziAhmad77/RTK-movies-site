@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo">
-        <Link to="/">Movie App</Link>
+        <Link to="/">App By </Link>
       </div>
       <div className="search-bar">
         <form action="" onSubmit={submitHandler}>
@@ -37,7 +37,10 @@ const Header = () => {
         </form>
       </div>
       <div className="user-image">
-        <i class="fa-solid fa-circle-user" style={{color:"white",fontSize:"40px"}}></i>
+        <i
+          class="fa-solid fa-circle-user"
+          style={{ color: 'white', fontSize: '40px' }}
+        ></i>
       </div>
     </div>
   );
