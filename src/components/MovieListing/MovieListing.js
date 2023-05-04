@@ -11,7 +11,8 @@ import MovieCard from './../MovieCard/MovieCard';
 import './MovieListing.scss';
 import { Settings } from '../../common/settings';
 
-const MovieListing = () => {
+const MovieListing = (props) => {
+  const { color } = props;
   const movies = useSelector(getAllMovies);
   const shows = useSelector(getAllShows);
   const loading = useSelector(getLoading);
@@ -24,11 +25,12 @@ const MovieListing = () => {
     return <h2 style={{ color: 'white' }}>Something went wrong!</h2>;
   }
 
-  let renderMovies, renderShows = '';
+  let renderMovies,
+    renderShows = '';
   renderMovies =
     movies.Response === 'True' ? (
       movies.Search.map((movie, index) => {
-        return <MovieCard key={index} data={movie} />;
+        return <MovieCard key={index} data={movie} color={color} />;
       })
     ) : (
       <div className="movies-error">
@@ -39,7 +41,7 @@ const MovieListing = () => {
   renderShows =
     shows.Response === 'True' ? (
       shows.Search.map((show, index) => {
-        return <MovieCard key={index} data={show} />;
+        return <MovieCard key={index} data={show} color={color} />;
       })
     ) : (
       <div className="shows-error">
@@ -50,7 +52,7 @@ const MovieListing = () => {
     <div className="movie-wrapper">
       <div className="movie-list">
         <h2>Movies</h2>
-          <Slider {...Settings}>{renderMovies}</Slider>
+        <Slider {...Settings}>{renderMovies}</Slider>
       </div>
       <div className="show-list">
         <h2>Shows</h2>
