@@ -3,7 +3,8 @@ import MovieListing from './../MovieListing/MovieListing';
 import { fetchAsyncMovies,fetchAsyncShows } from '../../features/movies/movieSlice';
 import { useDispatch } from 'react-redux';
 
-const Home = () => {
+const Home = (props) => {
+  const {color} = props;
   const dispatch = useDispatch();
   const movieText = "sports";
   const showText = "fighting"
@@ -24,7 +25,7 @@ const Home = () => {
   return (
     <div>
       <div className="banner-img">
-      <MovieListing />
+      <MovieListing color={color} />
       </div>
     </div>
   );
