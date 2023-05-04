@@ -1,6 +1,6 @@
 import './App.scss';
 import { Route, Routes } from 'react-router-dom';
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState } from 'react';
 import Home from './components/Home/Home';
 import MovieDetail from './components/MovieDetail/MovieDetail';
 import Header from './components/Header/Header';
@@ -12,12 +12,14 @@ import Error from './components/Error/Error';
 // const Home = lazy(() => import('./components/Home/Home'));
 
 const Router = () => {
+  const [color, setColor] = useState(false);
+  console.log(color, 'color');
   return (
     <>
-      <Header />
+      <Header color={color} setColor={setColor} />
       <div className="container">
         <Routes>
-            <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home color={color} />} />
           <Route path="/movie/:imdbID" element={<MovieDetail />} />
           <Route path="*" element={<Error />} />
         </Routes>
