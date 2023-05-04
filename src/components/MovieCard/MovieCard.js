@@ -3,9 +3,9 @@ import './MovieCard.scss';
 import React from 'react';
 
 const MovieCard = (props) => {
-  const { data } = props;
+  const { data, color } = props;
   return (
-    <div className="card-item">
+    <div className={`card-item ${color ? 'color' : ''}`}>
       <Link to={`/movie/${data.imdbID}`}>
         <div className="card-inner">
           <div className="card-top">
