@@ -8,7 +8,8 @@ import {
   fetchAsyncShows,
 } from '../../features/movies/movieSlice';
 
-const Header = () => {
+const Header = (props) => {
+  const { color, setColor } = props;
   const [term, setTerm] = useState('');
   const dispatch = useDispatch();
   const submitHandler = (e) => {
@@ -40,6 +41,19 @@ const Header = () => {
         <i
           class="fa-solid fa-circle-user"
           style={{ color: 'white', fontSize: '40px' }}
+        ></i>
+      </div>
+      <div className="moon-image">
+        <i
+          class="fa-solid fa-moon"
+          style={{
+            color: 'white',
+            fontSize: '30px',
+            fontWeight:100,
+            cursor: 'pointer',
+            textAlign:"center"
+          }}
+          onClick={() => setColor(!color)}
         ></i>
       </div>
     </div>
