@@ -49,9 +49,9 @@ const Header = (props) => {
           style={{
             color: 'white',
             fontSize: '30px',
-            fontWeight:100,
+            fontWeight: 100,
             cursor: 'pointer',
-            textAlign:"center"
+            textAlign: 'center',
           }}
           onClick={() => setColor(!color)}
         ></i>
