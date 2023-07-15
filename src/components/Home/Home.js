@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
 import MovieListing from './../MovieListing/MovieListing';
-import { fetchAsyncMovies,fetchAsyncShows } from '../../features/movies/movieSlice';
+import {
+  fetchAsyncMovies,
+  fetchAsyncShows,
+} from '../../features/movies/movieSlice';
 import { useDispatch } from 'react-redux';
 
 const Home = (props) => {
-  const {color} = props;
+  const { color } = props;
   const dispatch = useDispatch();
-  const movieText = "sports";
-  const showText = "fighting"
+  const movieText = 'sports';
+  const showText = 'fighting';
   useEffect(() => {
     // const movieText = 'Harry';
     // const fetchMovies = async () => {
@@ -25,7 +28,7 @@ const Home = (props) => {
   return (
     <div>
       <div className="banner-img">
-      <MovieListing color={color} />
+        <MovieListing color={color} />
       </div>
     </div>
   );
