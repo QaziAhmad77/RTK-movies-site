@@ -54,10 +54,10 @@ const movieSlice = createSlice({
       state.status = STATUSES.LOADING;
       console.log('Pending');
     },
-    [fetchAsyncMovies.fulfilled]: (state, { payload }) => {
+    [fetchAsyncMovies.fulfilled]: (state, action) => {
       console.log('Fetched Successfully!');
       state.status = STATUSES.IDLE;
-      state.movies = payload;
+      state.movies = action.payload;
       // return { ...state, movies: payload };
     },
     [fetchAsyncMovies.rejected]: (state) => {
