@@ -37,12 +37,6 @@ const Header = (props) => {
           </button>
         </form>
       </div>
-      <div className="user-image">
-        <i
-          class="fa-solid fa-circle-user"
-          style={{ color: 'white', fontSize: '40px' }}
-        ></i>
-      </div>
       <div className="moon-image">
         <i
           class="fa-solid fa-moon"
